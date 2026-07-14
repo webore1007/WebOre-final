@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Scope Policy — WebOre</title>
+  <meta name="description" content="WebOre Project Scope Policy." />
+  <link rel="stylesheet" href="../css/style.css" />
+  
+</head>
+<body>
+
+  <main class="page">
+    
+    <div class="bg-scene" aria-hidden="true">
+      <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="gradA" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#060818"/><stop offset="12%" stop-color="#1b2fd6"/>
+            <stop offset="24%" stop-color="#b7c4ff"/><stop offset="36%" stop-color="#4c2fe0"/>
+            <stop offset="48%" stop-color="#0d0730"/><stop offset="60%" stop-color="#7c3aed"/>
+            <stop offset="72%" stop-color="#eef0ff"/><stop offset="84%" stop-color="#2a1a63"/>
+            <stop offset="100%" stop-color="#05040f"/>
+          </linearGradient>
+          <linearGradient id="gradB" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0a0518"/><stop offset="14%" stop-color="#7c3aed"/>
+            <stop offset="28%" stop-color="#f5d0fe"/><stop offset="42%" stop-color="#b83df0"/>
+            <stop offset="56%" stop-color="#170a2e"/><stop offset="70%" stop-color="#4c2fe0"/>
+            <stop offset="84%" stop-color="#dce4ff"/><stop offset="100%" stop-color="#05040f"/>
+          </linearGradient>
+          <linearGradient id="gradC" x1="50%" y1="0%" x2="50%" y2="100%">
+            <stop offset="0%" stop-color="#1a0620"/><stop offset="20%" stop-color="#e879f9"/>
+            <stop offset="40%" stop-color="#fdf4ff"/><stop offset="60%" stop-color="#a21caf"/>
+            <stop offset="80%" stop-color="#2a0630"/><stop offset="100%" stop-color="#0a0210"/>
+          </linearGradient>
+          <radialGradient id="gradEmber" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="rgba(255,176,112,0.55)"/>
+            <stop offset="100%" stop-color="rgba(255,176,112,0)"/>
+          </radialGradient>
+          <filter id="glowBlur" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="55"/></filter>
+          <filter id="softEdge" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter>
+          <filter id="emberBlur" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="40"/></filter>
+        </defs>
+        <g class="ribbon-anim ribbon-anim-a mix-screen">
+          <path d="M -100 180 C 200 -80 480 280 760 160 C 1000 60 1200 240 1600 40 L 1600 200 C 1200 400 1000 220 760 320 C 480 440 200 140 -100 340 Z" fill="url(#gradA)" filter="url(#glowBlur)" opacity="0.55"/>
+          <path d="M -100 180 C 200 -80 480 280 760 160 C 1000 60 1200 240 1600 40 L 1600 200 C 1200 400 1000 220 760 320 C 480 440 200 140 -100 340 Z" fill="url(#gradA)" filter="url(#softEdge)"/>
+          <path d="M -100 180 C 200 -80 480 280 760 160 C 1000 60 1200 240 1600 40 L 1600 200 C 1200 400 1000 220 760 320 C 480 440 200 140 -100 340 Z" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2" filter="url(#softEdge)"/>
+        </g>
+        <g class="ribbon-anim ribbon-anim-b mix-screen">
+          <path d="M 1600 -60 C 1250 200 950 -40 680 160 C 430 350 180 120 -100 380 L -100 560 C 180 300 430 530 680 340 C 950 140 1250 380 1600 120 Z" fill="url(#gradB)" filter="url(#glowBlur)" opacity="0.55"/>
+          <path d="M 1600 -60 C 1250 200 950 -40 680 160 C 430 350 180 120 -100 380 L -100 560 C 180 300 430 530 680 340 C 950 140 1250 380 1600 120 Z" fill="url(#gradB)" filter="url(#softEdge)"/>
+          <path d="M 1600 -60 C 1250 200 950 -40 680 160 C 430 350 180 120 -100 380 L -100 560 C 180 300 430 530 680 340 C 950 140 1250 380 1600 120 Z" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="2" filter="url(#softEdge)"/>
+        </g>
+        <g class="ribbon-anim ribbon-anim-c mix-screen">
+          <path d="M -80 560 C 200 460 420 620 660 540 C 900 460 1120 600 1480 500 L 1480 600 C 1120 700 900 560 660 640 C 420 720 200 560 -80 660 Z" fill="url(#gradC)" filter="url(#glowBlur)" opacity="0.45"/>
+          <path d="M -80 560 C 200 460 420 620 660 540 C 900 460 1120 600 1480 500 L 1480 600 C 1120 700 900 560 660 640 C 420 720 200 560 -80 660 Z" fill="url(#gradC)" filter="url(#softEdge)"/>
+        </g>
+        <circle class="ribbon-anim ribbon-anim-ember mix-screen" cx="120" cy="140" r="180" fill="url(#gradEmber)" filter="url(#emberBlur)"/>
+      </svg>
+      <div class="bg-vignette"></div>
+      <div class="bg-grain"></div>
+      <div class="bg-particles"></div>
+    </div>
+
+    
+    <nav class="navbar">
+      <div class="navbar-inner glass">
+        <a href="../index.html" class="brand">WebOre<sup>&reg;</sup></a>
+        <div class="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="../services.html">Services</a>
+          <a href="../about.html">About</a>
+          <a href="../contact.html">Contact Us</a>
+        </div>
+        <div class="nav-actions" id="nav-actions">
+          <a href="../login.html" class="nav-login-link">Log in</a>
+          <a href="../signup.html" class="btn btn-pill btn-sm glass-pill">Start Project</a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Open menu" onclick="document.querySelector('.mobile-menu').classList.add('show')">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-menu">
+      <button class="close-btn" aria-label="Close menu" onclick="document.querySelector('.mobile-menu').classList.remove('show')">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+      </button>
+        <a href="../index.html">Home</a>
+        <a href="../services.html">Services</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact Us</a>
+    </div>
+    <div class="legal-doc glass" style="padding:40px;border-radius:24px;">
+      <a href="index.html" class="back">&larr; All policies</a>
+      <h1>Project Scope Policy</h1>
+      <p class="updated">Last Updated: 11 July 2026</p>
+      <p class="intro">At WebOre, we believe that a successful project begins with a clearly defined scope of work. This Project Scope Policy explains how project requirements are defined, managed, and modified throughout the development process. By engaging WebOre's services, you agree to this Project Scope Policy.</p>
+      <h2>Purpose</h2>
+<p>The purpose of this policy is to ensure that both WebOre and the client have a clear understanding of the project's objectives, deliverables, responsibilities, timelines, and limitations before work begins.</p>
+<h2>Project Scope</h2>
+<p>Before development begins, WebOre and the client will agree upon the project scope, which may include:</p>
+<ul><li>Number of webpages</li><li>Website type</li><li>Design requirements</li><li>Features and functionality</li><li>Forms</li><li>Integrations</li><li>Responsive design</li><li>Content provided by the client</li><li>Delivery timeline</li><li>Technologies used</li><li>Hosting requirements</li></ul>
+<p>Only the items specifically agreed upon will be included in the project.</p>
+<h2>Scope Confirmation</h2>
+<p>The agreed project scope will be confirmed before development begins through:</p>
+<ul><li>A written proposal</li><li>Quotation</li><li>Invoice</li><li>Email confirmation</li><li>Signed agreement</li></ul>
+<p>Once approved, the project scope becomes the official scope of work.</p>
+<h2>Scope Changes</h2>
+<p>Clients may request changes during development.</p>
+<p>Examples include:</p>
+<ul><li>Additional pages</li><li>New features</li><li>Dashboard/Admin Panel</li><li>User Login System</li><li>Payment Gateway</li><li>Blog System</li><li>API Integrations</li><li>Animations</li><li>Additional Languages</li></ul>
+<p>These requests are considered Change Requests and are not automatically included in the original project.</p>
+<h2>Change Request Process</h2>
+<p>If additional work is requested:</p>
+<ol><li>The client submits the requested changes.</li><li>WebOre reviews the request.</li><li>An updated quotation, timeline, or proposal may be provided.</li><li>Work begins only after the client approves the revised scope.</li></ol>
+<h2>Out-of-Scope Work</h2>
+<p>The following are examples of work that is generally outside the agreed project scope unless specifically included in writing:</p>
+<ul><li>Additional website pages</li><li>Logo creation</li><li>Branding services</li><li>Content writing</li><li>Photography or videography</li><li>Search Engine Optimization (SEO)</li><li>Digital marketing</li><li>Social media management</li><li>Website hosting</li><li>Domain registration</li><li>Email setup</li><li>Third-party software purchases</li><li>Major design revisions after approval</li><li>New features requested after development has begun</li></ul>
+<h2>Client Responsibilities</h2>
+<p>The client agrees to:</p>
+<ul><li>Provide accurate project requirements.</li><li>Supply all required content, images, logos, and documents.</li><li>Review work within a reasonable time.</li><li>Respond to requests for approvals promptly.</li><li>Notify WebOre of any required changes as early as possible.</li></ul>
+<p>Delays in communication may affect the project timeline.</p>
+<h2>Project Timeline</h2>
+<p>Project timelines are based on the agreed scope.</p>
+<p>Additional requests, delayed approvals, or changes in project requirements may result in revised delivery dates.</p>
+<h2>Revision Policy</h2>
+<p>Reasonable revisions within the approved scope are included according to the selected package or agreement.</p>
+<p>Requests that introduce new functionality or significantly alter previously approved work may be treated as additional work and may require additional fees.</p>
+<h2>Additional Charges</h2>
+<p>Work requested outside the agreed project scope may result in:</p>
+<ul><li>Additional development charges</li><li>Extended delivery timelines</li><li>Updated quotations</li><li>Separate invoices</li></ul>
+<p>No additional work will begin until both parties agree to the revised terms.</p>
+<h2>Project Completion</h2>
+<p>A project will be considered complete when:</p>
+<ul><li>All agreed deliverables have been provided.</li><li>The client has approved the completed work or the agreed acceptance process has concluded.</li></ul>
+<ul><li>Final payment has been received, where applicable.</li></ul>
+<p>Any future updates or enhancements may be treated as new projects or covered under a separate maintenance agreement.</p>
+<h2>Cancellation</h2>
+<p>If the client cancels the project after work has started, completed work up to the date of cancellation may be chargeable in accordance with our Refund &amp; Cancellation Policy.</p>
+<h2>Policy Updates</h2>
+<p>WebOre reserves the right to update this Project Scope Policy at any time.</p>
+<p>Any revised version will become effective immediately upon publication on our website.</p>
+<h2>Contact Us</h2>
+<p>If you have any questions regarding this Project Scope Policy, please contact us.</p>
+<p>WebOre</p>
+<p>📧 Email: webore1007@gmail.com</p>
+    </div>
+    
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="../index.html" class="brand">WebOre<sup>&reg;</sup></a>
+          <p>Building Your Digital Presence — websites and digital products, designed and built end to end.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Studio</h4>
+          <div class="footer-links">
+            <a href="../services.html">Services</a>
+            <a href="../about.html">About</a>
+            <a href="../contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Account</h4>
+          <div class="footer-links">
+            <a href="../signup.html">Start a project</a>
+            <a href="../login.html">Client login</a>
+            <a href="../dashboard.html">Client dashboard</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Say hello</h4>
+          <div class="footer-links">
+            <span>webore1007@gmail.com</span>
+            <span>Remote — worldwide</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="footer-year"></span> WebOre. All rights reserved.</span>
+        <div class="footer-legal-links">
+          <a href="../legal/index.html">Legal</a>
+          <a href="../legal/privacy-policy.html">Privacy</a>
+          <a href="../legal/terms-and-conditions.html">Terms</a>
+          <a href="../legal/cookie-policy.html">Cookies</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+  
+    <div class="cookie-banner" id="cookie-banner">
+      <p>We use cookies to run this site (essential), and — only with your permission — to understand traffic and remember preferences. Read our <a href="../legal/cookie-policy.html">Cookie Policy</a>.</p>
+      <div class="cookie-actions">
+        <button class="btn btn-default btn-sm" id="cookie-accept-all">Accept all</button>
+        <button class="btn btn-outline btn-sm" id="cookie-reject">Reject non-essential</button>
+        <button class="btn btn-outline btn-sm" id="cookie-manage">Manage preferences</button>
+      </div>
+    </div>
+    <div class="cookie-modal-overlay" id="cookie-modal-overlay">
+      <div class="cookie-modal">
+        <h3>Cookie preferences</h3>
+        <div class="cookie-row" style="border-top:none;">
+          <div>
+            <p class="t">Essential</p>
+            <p class="d">Required for login, forms, and security. Always on.</p>
+          </div>
+          <label class="switch"><input type="checkbox" checked disabled><span class="track"></span></label>
+        </div>
+        <div class="cookie-row">
+          <div>
+            <p class="t">Analytics</p>
+            <p class="d">Helps us understand traffic and improve the site.</p>
+          </div>
+          <label class="switch"><input type="checkbox" id="cookie-toggle-analytics"><span class="track"></span></label>
+        </div>
+        <div class="cookie-row">
+          <div>
+            <p class="t">Preferences</p>
+            <p class="d">Remembers settings like language or theme.</p>
+          </div>
+          <label class="switch"><input type="checkbox" id="cookie-toggle-preferences"><span class="track"></span></label>
+        </div>
+        <div class="cookie-modal-actions">
+          <button class="btn btn-default btn-sm" id="cookie-modal-save">Save preferences</button>
+          <button class="btn btn-outline btn-sm" id="cookie-modal-close">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/main.js"></script>
+  
+</body>
+</html>

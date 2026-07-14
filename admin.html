@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — WebOre</title>
+  <meta name="description" content="Internal admin dashboard for managing client requests and messages." />
+  <link rel="stylesheet" href="css/style.css" />
+  
+</head>
+<body>
+
+  <main class="page">
+    
+    <div class="bg-scene" aria-hidden="true">
+      <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="gradA" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#060818"/><stop offset="12%" stop-color="#1b2fd6"/>
+            <stop offset="24%" stop-color="#b7c4ff"/><stop offset="36%" stop-color="#4c2fe0"/>
+            <stop offset="48%" stop-color="#0d0730"/><stop offset="60%" stop-color="#7c3aed"/>
+            <stop offset="72%" stop-color="#eef0ff"/><stop offset="84%" stop-color="#2a1a63"/>
+            <stop offset="100%" stop-color="#05040f"/>
+          </linearGradient>
+          <linearGradient id="gradB" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0a0518"/><stop offset="14%" stop-color="#7c3aed"/>
+            <stop offset="28%" stop-color="#f5d0fe"/><stop offset="42%" stop-color="#b83df0"/>
+            <stop offset="56%" stop-color="#170a2e"/><stop offset="70%" stop-color="#4c2fe0"/>
+            <stop offset="84%" stop-color="#dce4ff"/><stop offset="100%" stop-color="#05040f"/>
+          </linearGradient>
+          <linearGradient id="gradC" x1="50%" y1="0%" x2="50%" y2="100%">
+            <stop offset="0%" stop-color="#1a0620"/><stop offset="20%" stop-color="#e879f9"/>
+            <stop offset="40%" stop-color="#fdf4ff"/><stop offset="60%" stop-color="#a21caf"/>
+            <stop offset="80%" stop-color="#2a0630"/><stop offset="100%" stop-color="#0a0210"/>
+          </linearGradient>
+          <radialGradient id="gradEmber" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="rgba(255,176,112,0.55)"/>
+            <stop offset="100%" stop-color="rgba(255,176,112,0)"/>
+          </radialGradient>
+          <filter id="glowBlur" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="55"/></filter>
+          <filter id="softEdge" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter>
+          <filter id="emberBlur" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="40"/></filter>
+        </defs>
+        <g class="ribbon-anim ribbon-anim-a mix-screen">
+          <path d="M -100 180 C 200 -80 480 280 760 160 C 1000 60 1200 240 1600 40 L 1600 200 C 1200 400 1000 220 760 320 C 480 440 200 140 -100 340 Z" fill="url(#gradA)" filter="url(#glowBlur)" opacity="0.55"/>
+          <path d="M -100 180 C 200 -80 480 280 760 160 C 1000 60 1200 240 1600 40 L 1600 200 C 1200 400 1000 220 760 320 C 480 440 200 140 -100 340 Z" fill="url(#gradA)" filter="url(#softEdge)"/>
+          <path d="M -100 180 C 200 -80 480 280 760 160 C 1000 60 1200 240 1600 40 L 1600 200 C 1200 400 1000 220 760 320 C 480 440 200 140 -100 340 Z" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2" filter="url(#softEdge)"/>
+        </g>
+        <g class="ribbon-anim ribbon-anim-b mix-screen">
+          <path d="M 1600 -60 C 1250 200 950 -40 680 160 C 430 350 180 120 -100 380 L -100 560 C 180 300 430 530 680 340 C 950 140 1250 380 1600 120 Z" fill="url(#gradB)" filter="url(#glowBlur)" opacity="0.55"/>
+          <path d="M 1600 -60 C 1250 200 950 -40 680 160 C 430 350 180 120 -100 380 L -100 560 C 180 300 430 530 680 340 C 950 140 1250 380 1600 120 Z" fill="url(#gradB)" filter="url(#softEdge)"/>
+          <path d="M 1600 -60 C 1250 200 950 -40 680 160 C 430 350 180 120 -100 380 L -100 560 C 180 300 430 530 680 340 C 950 140 1250 380 1600 120 Z" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="2" filter="url(#softEdge)"/>
+        </g>
+        <g class="ribbon-anim ribbon-anim-c mix-screen">
+          <path d="M -80 560 C 200 460 420 620 660 540 C 900 460 1120 600 1480 500 L 1480 600 C 1120 700 900 560 660 640 C 420 720 200 560 -80 660 Z" fill="url(#gradC)" filter="url(#glowBlur)" opacity="0.45"/>
+          <path d="M -80 560 C 200 460 420 620 660 540 C 900 460 1120 600 1480 500 L 1480 600 C 1120 700 900 560 660 640 C 420 720 200 560 -80 660 Z" fill="url(#gradC)" filter="url(#softEdge)"/>
+        </g>
+        <circle class="ribbon-anim ribbon-anim-ember mix-screen" cx="120" cy="140" r="180" fill="url(#gradEmber)" filter="url(#emberBlur)"/>
+      </svg>
+      <div class="bg-vignette"></div>
+      <div class="bg-grain"></div>
+      <div class="bg-particles"></div>
+    </div>
+
+    
+    <nav class="navbar">
+      <div class="navbar-inner glass">
+        <a href="index.html" class="brand">WebOre<sup>&reg;</sup></a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="about.html">About</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="nav-actions" id="nav-actions">
+          <a href="login.html" class="nav-login-link">Log in</a>
+          <a href="signup.html" class="btn btn-pill btn-sm glass-pill">Start Project</a>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Open menu" onclick="document.querySelector('.mobile-menu').classList.add('show')">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-menu">
+      <button class="close-btn" aria-label="Close menu" onclick="document.querySelector('.mobile-menu').classList.remove('show')">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+      </button>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+
+    <section class="block tight">
+      <div class="wrap">
+        <div class="dash-head">
+          <span class="eyebrow">Admin</span>
+          <h1>Control panel</h1>
+          <p>Everything about the site — content, people, and settings — in one place.</p>
+        </div>
+
+        <div class="admin-shell">
+          <nav class="admin-sidebar glass">
+            <button class="admin-nav-item active" data-section="dashboard">Dashboard</button>
+            <button class="admin-nav-item" data-section="projects">Projects</button>
+            <button class="admin-nav-item" data-section="users">Users</button>
+            <button class="admin-nav-item" data-section="pages">Pages</button>
+            <button class="admin-nav-item" data-section="portfolio">Portfolio</button>
+            <button class="admin-nav-item" data-section="messages">Messages <span class="count" id="nav-count-messages" style="display:none;"></span></button>
+            <button class="admin-nav-item" data-section="media">Media</button>
+            <button class="admin-nav-item" data-section="blog">Blog</button>
+            <button class="admin-nav-item" data-section="analytics">Analytics</button>
+            <button class="admin-nav-item" data-section="settings">Settings</button>
+            <button class="admin-nav-item" data-section="security">Security</button>
+            <button class="admin-nav-item" data-section="deploy">Deploy</button>
+          </nav>
+
+          <div class="admin-main">
+
+            <!-- Dashboard -->
+            <div class="admin-section active" id="section-dashboard">
+              <div class="admin-section-head"><div><h2>Overview</h2><p>A snapshot of requests, messages, and users.</p></div></div>
+              <div class="stat-grid" id="admin-stats">
+                <div class="stat-card glass"><p class="k">Total requests</p><p class="v" id="stat-total">—</p></div>
+                <div class="stat-card glass"><p class="k">New</p><p class="v" id="stat-new">—</p></div>
+                <div class="stat-card glass"><p class="k">In progress</p><p class="v" id="stat-progress">—</p></div>
+                <div class="stat-card glass"><p class="k">Completed</p><p class="v" id="stat-completed">—</p></div>
+              </div>
+              <div class="card glass" style="margin-top:24px;">
+                <h3 style="margin-top:0;">Requests by project type</h3>
+                <div id="stat-by-type" style="margin-top:16px;display:flex;flex-direction:column;gap:10px;"></div>
+              </div>
+            </div>
+
+            <!-- Projects -->
+            <div class="admin-section" id="section-projects">
+              <div class="admin-section-head"><div><h2>Project requests</h2><p>Every website build request submitted by clients.</p></div></div>
+              <div class="table-wrap">
+                <table class="data-table">
+                  <thead><tr><th>Client</th><th>Business</th><th>Type</th><th>Status</th><th>Submitted</th><th></th></tr></thead>
+                  <tbody id="admin-requests-body"><tr><td colspan="6" class="admin-empty">Loading…</td></tr></tbody>
+                </table>
+              </div>
+              <div id="admin-request-detail"></div>
+            </div>
+
+            <!-- Users -->
+            <div class="admin-section" id="section-users">
+              <div class="admin-section-head">
+                <div><h2>Users</h2><p>Admins, developers, and clients — all in one list.</p></div>
+                <button class="btn-mini primary" id="user-add-btn">+ Add user</button>
+              </div>
+              <div class="card glass" id="user-form-card" style="display:none;margin-bottom:20px;">
+                <h3 style="margin-top:0;">New user</h3>
+                <form class="admin-form cols-2" id="user-form">
+                  <label class="field"><span>Name</span><input type="text" name="name" required /></label>
+                  <label class="field"><span>Email</span><input type="email" name="email" required /></label>
+                  <label class="field"><span>Password</span><input type="password" name="password" minlength="6" required /></label>
+                  <label class="field"><span>Role</span>
+                    <select name="role">
+                      <option value="customer">Client</option>
+                      <option value="developer">Developer</option>
+                      <option value="admin">Admin</option>
+                    </select>
+                  </label>
+                  <label class="field"><span>Company (optional)</span><input type="text" name="company" /></label>
+                  <label class="field"><span>Phone (optional)</span><input type="text" name="phone" /></label>
+                  <div class="field full" style="flex-direction:row;gap:10px;">
+                    <button type="submit" class="btn-mini primary">Create user</button>
+                    <button type="button" class="btn-mini" id="user-form-cancel">Cancel</button>
+                  </div>
+                </form>
+              </div>
+              <div class="table-wrap">
+                <table class="data-table">
+                  <thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Joined</th><th></th></tr></thead>
+                  <tbody id="admin-users-body"><tr><td colspan="5" class="admin-empty">Loading…</td></tr></tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Pages -->
+            <div class="admin-section" id="section-pages">
+              <div class="admin-section-head"><div><h2>Pages</h2><p>Edit the hero heading and subtext shown on Home, About, Services, and Contact.</p></div></div>
+              <div class="tabs" id="page-tabs">
+                <button class="tab-btn active" data-page="home">Home</button>
+                <button class="tab-btn" data-page="about">About</button>
+                <button class="tab-btn" data-page="services">Services</button>
+                <button class="tab-btn" data-page="contact">Contact</button>
+              </div>
+              <div class="card glass" style="margin-top:20px;">
+                <form class="admin-form" id="page-form">
+                  <input type="hidden" name="slug" value="home" />
+                  <label class="field"><span>Heading</span><input type="text" name="hero_title" /></label>
+                  <label class="field"><span>Subtext</span><textarea name="hero_subtitle" rows="3"></textarea></label>
+                  <label class="field"><span>SEO title</span><input type="text" name="meta_title" /></label>
+                  <label class="field"><span>SEO description</span><textarea name="meta_description" rows="2"></textarea></label>
+                  <div class="field"><button type="submit" class="btn-mini primary">Save page</button> <span id="page-save-status" style="margin-left:10px;font-size:.8125rem;color:rgba(255,255,255,.5);"></span></div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Portfolio -->
+            <div class="admin-section" id="section-portfolio">
+              <div class="admin-section-head">
+                <div><h2>Portfolio</h2><p>Projects shown on the public Portfolio page.</p></div>
+                <button class="btn-mini primary" id="portfolio-add-btn">+ Add item</button>
+              </div>
+              <div class="card glass" id="portfolio-form-card" style="display:none;margin-bottom:20px;">
+                <h3 style="margin-top:0;" id="portfolio-form-title">New portfolio item</h3>
+                <form class="admin-form cols-2" id="portfolio-form">
+                  <input type="hidden" name="id" />
+                  <label class="field"><span>Title</span><input type="text" name="title" required /></label>
+                  <label class="field"><span>Category</span><input type="text" name="category" placeholder="e.g. E-commerce" /></label>
+                  <label class="field full"><span>Description</span><textarea name="description" rows="2"></textarea></label>
+                  <label class="field"><span>Image URL</span><input type="text" name="image_url" placeholder="/uploads/... or paste from Media" /></label>
+                  <label class="field"><span>Project URL</span><input type="text" name="project_url" placeholder="https://…" /></label>
+                  <label class="field"><span>Sort order</span><input type="number" name="sort_order" value="0" /></label>
+                  <label class="field" style="flex-direction:row;align-items:center;gap:8px;margin-top:22px;"><input type="checkbox" name="featured" style="width:auto;" /> <span>Featured</span></label>
+                  <div class="field full" style="flex-direction:row;gap:10px;">
+                    <button type="submit" class="btn-mini primary">Save item</button>
+                    <button type="button" class="btn-mini" id="portfolio-form-cancel">Cancel</button>
+                  </div>
+                </form>
+              </div>
+              <div class="admin-card-grid cols-3" id="portfolio-admin-grid"><p class="admin-empty">Loading…</p></div>
+            </div>
+
+            <!-- Messages -->
+            <div class="admin-section" id="section-messages">
+              <div class="admin-section-head"><div><h2>Messages</h2><p>Contact form submissions from the public site.</p></div></div>
+              <div class="table-wrap">
+                <table class="data-table">
+                  <thead><tr><th>From</th><th>Subject</th><th>Message</th><th>Received</th><th></th></tr></thead>
+                  <tbody id="admin-messages-body"><tr><td colspan="5" class="admin-empty">Loading…</td></tr></tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Media -->
+            <div class="admin-section" id="section-media">
+              <div class="admin-section-head">
+                <div><h2>Media</h2><p>Images, video, and files — reference these by URL elsewhere in the panel.</p></div>
+                <label class="btn-mini primary" style="cursor:pointer;">Upload <input type="file" id="media-upload-input" style="display:none;" /></label>
+              </div>
+              <p id="media-upload-status" style="font-size:.8125rem;color:rgba(255,255,255,.5);"></p>
+              <div class="media-grid" id="media-grid"><p class="admin-empty">Loading…</p></div>
+            </div>
+
+            <!-- Blog -->
+            <div class="admin-section" id="section-blog">
+              <div class="admin-section-head">
+                <div><h2>Blog</h2><p>Write and publish posts to the public Blog page.</p></div>
+                <button class="btn-mini primary" id="blog-add-btn">+ New post</button>
+              </div>
+              <div class="card glass" id="blog-form-card" style="display:none;margin-bottom:20px;">
+                <h3 style="margin-top:0;" id="blog-form-title">New post</h3>
+                <form class="admin-form" id="blog-form">
+                  <input type="hidden" name="id" />
+                  <label class="field"><span>Title</span><input type="text" name="title" required /></label>
+                  <label class="field"><span>Excerpt</span><input type="text" name="excerpt" /></label>
+                  <label class="field"><span>Cover image URL</span><input type="text" name="cover_image" /></label>
+                  <label class="field"><span>Content</span><textarea name="content" rows="8"></textarea></label>
+                  <div class="field" style="flex-direction:row;gap:10px;">
+                    <button type="submit" class="btn-mini" data-publish="0">Save draft</button>
+                    <button type="submit" class="btn-mini primary" data-publish="1">Publish</button>
+                    <button type="button" class="btn-mini" id="blog-form-cancel">Cancel</button>
+                  </div>
+                </form>
+              </div>
+              <div class="table-wrap">
+                <table class="data-table">
+                  <thead><tr><th>Title</th><th>Status</th><th>Updated</th><th></th></tr></thead>
+                  <tbody id="admin-blog-body"><tr><td colspan="4" class="admin-empty">Loading…</td></tr></tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Analytics -->
+            <div class="admin-section" id="section-analytics">
+              <div class="admin-section-head"><div><h2>Analytics</h2><p>First-party visitor stats — no cookies, only counted when a visitor accepts the analytics cookie.</p></div></div>
+              <div class="stat-grid">
+                <div class="stat-card glass"><p class="k">Total views</p><p class="v" id="an-total">—</p></div>
+                <div class="stat-card glass"><p class="k">Last 7 days</p><p class="v" id="an-7">—</p></div>
+                <div class="stat-card glass"><p class="k">Last 30 days</p><p class="v" id="an-30">—</p></div>
+              </div>
+              <div class="admin-card-grid cols-2" style="margin-top:24px;">
+                <div class="card glass">
+                  <h3 style="margin-top:0;">Top pages (30 days)</h3>
+                  <div id="an-top-pages" style="margin-top:16px;display:flex;flex-direction:column;gap:10px;"></div>
+                </div>
+                <div class="card glass">
+                  <h3 style="margin-top:0;">Referrers (30 days)</h3>
+                  <div id="an-referrers" style="margin-top:16px;display:flex;flex-direction:column;gap:10px;"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Settings -->
+            <div class="admin-section" id="section-settings">
+              <div class="admin-section-head"><div><h2>Settings</h2><p>Site info, SEO defaults, social links, and social login — no code editing needed.</p></div></div>
+              <form id="settings-form">
+                <div class="card glass">
+                  <h3 style="margin-top:0;">Site info</h3>
+                  <div class="admin-form cols-2" style="margin-top:16px;">
+                    <label class="field"><span>Site name</span><input type="text" name="site_name" /></label>
+                    <label class="field"><span>Tagline</span><input type="text" name="tagline" /></label>
+                    <label class="field"><span>Contact email</span><input type="email" name="contact_email" /></label>
+                    <label class="field"><span>Contact phone</span><input type="text" name="contact_phone" /></label>
+                  </div>
+                </div>
+                <div class="card glass" style="margin-top:20px;">
+                  <h3 style="margin-top:0;">SEO defaults</h3>
+                  <div class="admin-form" style="margin-top:16px;">
+                    <label class="field"><span>Default page title</span><input type="text" name="seo_default_title" /></label>
+                    <label class="field"><span>Default meta description</span><textarea name="seo_default_description" rows="2"></textarea></label>
+                    <label class="field"><span>Google Analytics measurement ID (optional)</span><input type="text" name="ga_measurement_id" placeholder="G-XXXXXXX" /></label>
+                  </div>
+                </div>
+                <div class="card glass" style="margin-top:20px;">
+                  <h3 style="margin-top:0;">Social links</h3>
+                  <div class="admin-form cols-2" style="margin-top:16px;">
+                    <label class="field"><span>Twitter / X</span><input type="text" name="social_twitter" /></label>
+                    <label class="field"><span>Instagram</span><input type="text" name="social_instagram" /></label>
+                    <label class="field"><span>LinkedIn</span><input type="text" name="social_linkedin" /></label>
+                    <label class="field"><span>GitHub</span><input type="text" name="social_github" /></label>
+                  </div>
+                </div>
+                <div class="card glass" style="margin-top:20px;">
+                  <h3 style="margin-top:0;">Social login</h3>
+                  <p style="margin-top:8px;font-size:.8125rem;color:rgba(255,255,255,.5);">Paste your own Google / Facebook app credentials here to turn on "Continue with Google / Facebook" on the login and signup pages — no file editing required.</p>
+                  <div class="admin-form cols-2" style="margin-top:16px;">
+                    <label class="field"><span>Google Client ID</span><input type="text" name="google_client_id" placeholder="xxxx.apps.googleusercontent.com" /></label>
+                    <label class="field"><span>Facebook App ID</span><input type="text" name="facebook_app_id" /></label>
+                  </div>
+                </div>
+                <div class="card glass" style="margin-top:20px;">
+                  <h3 style="margin-top:0;">Maintenance mode</h3>
+                  <div class="toggle-row">
+                    <div><p class="t">Show a maintenance page to visitors</p><p class="d">Admin and login pages stay reachable so you can always turn this back off.</p></div>
+                    <label class="switch"><input type="checkbox" name="maintenance_mode" id="maintenance-toggle" /><span class="track"></span></label>
+                  </div>
+                  <label class="field" style="margin-top:12px;"><span>Maintenance message</span><input type="text" name="maintenance_message" /></label>
+                </div>
+                <div style="margin-top:20px;display:flex;align-items:center;gap:12px;">
+                  <button type="submit" class="btn btn-default btn-sm">Save settings</button>
+                  <span id="settings-save-status" style="font-size:.8125rem;color:rgba(255,255,255,.5);"></span>
+                </div>
+              </form>
+            </div>
+
+            <!-- Security -->
+            <div class="admin-section" id="section-security">
+              <div class="admin-section-head"><div><h2>Security</h2><p>Your password, recent logins, and a database backup.</p></div></div>
+              <div class="card glass">
+                <h3 style="margin-top:0;">Change your password</h3>
+                <form class="admin-form cols-2" id="password-form" style="margin-top:16px;">
+                  <label class="field"><span>Current password</span><input type="password" name="currentPassword" /></label>
+                  <label class="field"><span>New password</span><input type="password" name="newPassword" minlength="6" required /></label>
+                  <div class="field full"><button type="submit" class="btn-mini primary">Update password</button> <span id="password-status" style="margin-left:10px;font-size:.8125rem;color:rgba(255,255,255,.5);"></span></div>
+                </form>
+              </div>
+              <div class="card glass" style="margin-top:20px;">
+                <h3 style="margin-top:0;">Backup</h3>
+                <p style="margin-top:8px;font-size:.8125rem;color:rgba(255,255,255,.5);">Download a full copy of the site's database (users, projects, pages, portfolio, blog, messages).</p>
+                <a href="#" id="backup-download-link" class="btn-mini" style="margin-top:12px;display:inline-block;">Download backup</a>
+              </div>
+              <div class="card glass" style="margin-top:20px;">
+                <h3 style="margin-top:0;">Recent login activity</h3>
+                <div class="table-wrap" style="margin-top:16px;">
+                  <table class="data-table">
+                    <thead><tr><th>Email</th><th>Role</th><th>Result</th><th>IP</th><th>When</th></tr></thead>
+                    <tbody id="login-history-body"><tr><td colspan="5" class="admin-empty">Loading…</td></tr></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- Deploy -->
+            <div class="admin-section" id="section-deploy">
+              <div class="admin-section-head"><div><h2>Deploy</h2><p>Read-only status for this running server. Pushing updates depends on how you host this project (see README).</p></div></div>
+              <div class="stat-grid">
+                <div class="stat-card glass"><p class="k">Commit</p><p class="v" id="deploy-commit" style="font-size:1.25rem;">—</p></div>
+                <div class="stat-card glass"><p class="k">Branch</p><p class="v" id="deploy-branch" style="font-size:1.25rem;">—</p></div>
+                <div class="stat-card glass"><p class="k">Node version</p><p class="v" id="deploy-node" style="font-size:1.25rem;">—</p></div>
+                <div class="stat-card glass"><p class="k">Uptime</p><p class="v" id="deploy-uptime" style="font-size:1.25rem;">—</p></div>
+              </div>
+              <div class="admin-banner warn" style="margin-top:20px;">This project doesn't include an automated deploy pipeline. To ship changes, push your code to wherever this server is hosted and restart the Node process there — the exact steps depend on your host (see README.md).</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <footer class="site-footer">
+
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="brand">WebOre<sup>&reg;</sup></a>
+          <p>Building Your Digital Presence — websites and digital products, designed and built end to end.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Studio</h4>
+          <div class="footer-links">
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Account</h4>
+          <div class="footer-links">
+            <a href="signup.html">Start a project</a>
+            <a href="login.html">Client login</a>
+            <a href="dashboard.html">Client dashboard</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Say hello</h4>
+          <div class="footer-links">
+            <span>webore1007@gmail.com</span>
+            <span>Remote — worldwide</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="footer-year"></span> WebOre. All rights reserved.</span>
+        <div class="footer-legal-links">
+          <a href="legal/index.html">Legal</a>
+          <a href="legal/privacy-policy.html">Privacy</a>
+          <a href="legal/terms-and-conditions.html">Terms</a>
+          <a href="legal/cookie-policy.html">Cookies</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+  
+    <div class="cookie-banner" id="cookie-banner">
+      <p>We use cookies to run this site (essential), and — only with your permission — to understand traffic and remember preferences. Read our <a href="legal/cookie-policy.html">Cookie Policy</a>.</p>
+      <div class="cookie-actions">
+        <button class="btn btn-default btn-sm" id="cookie-accept-all">Accept all</button>
+        <button class="btn btn-outline btn-sm" id="cookie-reject">Reject non-essential</button>
+        <button class="btn btn-outline btn-sm" id="cookie-manage">Manage preferences</button>
+      </div>
+    </div>
+    <div class="cookie-modal-overlay" id="cookie-modal-overlay">
+      <div class="cookie-modal">
+        <h3>Cookie preferences</h3>
+        <div class="cookie-row" style="border-top:none;">
+          <div>
+            <p class="t">Essential</p>
+            <p class="d">Required for login, forms, and security. Always on.</p>
+          </div>
+          <label class="switch"><input type="checkbox" checked disabled><span class="track"></span></label>
+        </div>
+        <div class="cookie-row">
+          <div>
+            <p class="t">Analytics</p>
+            <p class="d">Helps us understand traffic and improve the site.</p>
+          </div>
+          <label class="switch"><input type="checkbox" id="cookie-toggle-analytics"><span class="track"></span></label>
+        </div>
+        <div class="cookie-row">
+          <div>
+            <p class="t">Preferences</p>
+            <p class="d">Remembers settings like language or theme.</p>
+          </div>
+          <label class="switch"><input type="checkbox" id="cookie-toggle-preferences"><span class="track"></span></label>
+        </div>
+        <div class="cookie-modal-actions">
+          <button class="btn btn-default btn-sm" id="cookie-modal-save">Save preferences</button>
+          <button class="btn btn-outline btn-sm" id="cookie-modal-close">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script><script src="js/admin.js"></script>
+</body>
+</html>

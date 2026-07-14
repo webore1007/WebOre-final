@@ -1,0 +1,19 @@
+{
+  "name": "webore-website",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "description": "WebOre — static site + Netlify Functions backend (no separate server).",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "npx netlify dev",
+    "build": "echo \"Nothing to build — static site + Netlify Functions, deployed as-is.\""
+  },
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2"
+  }
+}

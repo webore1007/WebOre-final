@@ -1,0 +1,42 @@
+## WebOre — Netlify configuration
+#
+# publish   -> the plain HTML/CSS/JS site lives at the project root, so this
+#              deploys everything Netlify needs for the frontend as-is.
+# functions -> every Express route now lives here as its own Netlify
+#              Function (see netlify/functions/*.js).
+# esbuild   -> required so the ES module `import`/`export` syntax used in
+#              the functions (and their shared netlify/functions/utils/
+#              modules) gets bundled correctly for each function.
+
+[build]
+  publish = "."
+  functions = "netlify/functions"
+  command = "npm install"
+
+[functions]
+  node_bundler = "esbuild"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Uploaded media (images/video/PDFs from the admin Media Library) keeps the
+# same clean "/uploads/<filename>" URLs the old Express static middleware
+# served — this just routes that path to the function that now serves the
+# bytes back out of Netlify Blobs.
+[[redirects]]
+  from = "/uploads/*"
+  to = "/.netlify/functions/uploads/:splat"
+  status = 200
+
+# Optional convenience alias: lets any request to /api/<fn>/... reach the
+# matching Netlify Function too. The frontend calls /.netlify/functions/...
+# directly (see js/api.js), so this isn't required for the site to work —
+# it's here only as a friendlier fallback if you ever want to hit the API
+# from curl/Postman/etc. without the /.netlify/functions/ prefix.
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+# Everything else falls through to the static files above (no SPA catch-all
+# needed — every page is its own real .html file).
